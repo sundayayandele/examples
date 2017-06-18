@@ -75,7 +75,8 @@ public class MachineLearningExampleIntegrationTest {
 		// Flight data (one single flight) --> We want to predict if it will be
 		// delayed or not
 		List<String> inputValues = Arrays.asList(
-				"1987,10,14,3,741,730,912,849,PS,1451,NA,91,79,NA,23,11,SAN,SFO,447,NA,NA,0,NA,0,NA,NA,NA,NA,NA,YES,YES");
+				"1987,10,14,3,741,730,912,849,PS,1451,NA,91,79,NA,23,11,SAN,SFO,447,NA,NA,0,NA,0,NA,NA,NA,NA,NA,YES,YES",
+				"1999,10,14,3,741,730,912,849,PS,1451,NA,91,79,NA,23,11,SAN,SFO,447,NA,NA,0,NA,0,NA,NA,NA,NA,NA,YES,YES");
 
 		// Step 1: Configure and start the processor topology.
 		//
@@ -203,6 +204,8 @@ public class MachineLearningExampleIntegrationTest {
 		streams.close();
 		assertThat(response).isNotNull();
 		assertThat(response.get(0).value).isEqualTo("Prediction: Is Airline delayed? => YES");
+		
+		assertThat(response.get(1).value).isEqualTo("Prediction: Is Airline delayed? => NO");
 	}
 
 }
