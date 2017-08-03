@@ -1,4 +1,4 @@
-# Confluent Examples
+# Confluent Examples (including some Kafka Streams - Machine Learning Examples using TensorFlow, H2O or DL4J)
 
 This repository contains code examples for [Apache Kafka](http://kafka.apache.org/) and the
 [Confluent Platform](http://www.confluent.io/product).
